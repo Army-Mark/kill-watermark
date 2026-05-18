@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"net/http"
 	"strings"
 	"video-watermark-remover/config"
 
@@ -13,7 +12,6 @@ func AuthMiddleware(cfg *config.Config) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authHeader := c.GetHeader("Authorization")
 		if authHeader == "" {
-			// 不强制认证，让用户可以使用
 			c.Next()
 			return
 		}

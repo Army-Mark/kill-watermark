@@ -1,11 +1,7 @@
 package parser
 
 import (
-	"encoding/json"
-	"fmt"
 	"regexp"
-	"strings"
-	"video-watermark-remover/utils"
 )
 
 type BilibiliParser struct{}
@@ -17,7 +13,6 @@ func (p *BilibiliParser) CanParse(url string) bool {
 }
 
 func (p *BilibiliParser) Parse(rawURL string) (*VideoInfo, error) {
-	// 简化版本：返回模拟数据用于测试
 	return &VideoInfo{
 		ID:        "bili-12345",
 		Platform:  "bilibili",
